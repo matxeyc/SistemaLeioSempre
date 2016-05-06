@@ -1,6 +1,5 @@
 package com.br.view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -24,6 +23,10 @@ import java.awt.event.ActionEvent;
 
 public class TelaCadastro extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_login;
@@ -83,6 +86,7 @@ public class TelaCadastro extends JFrame {
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String login = textField_login.getText();
+				@SuppressWarnings("deprecation")
 				String senha = passwordField.getText();
 				Arquivo arq = new Arquivo();
 				arq.escreverNoArquivo(login, senha);

@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.text.BreakIterator;
 
 public class Livros {
 	
@@ -25,7 +24,7 @@ public class Livros {
 	
 	public String procurarCaminho(String titulo){
 		try {
-			arqLeitura = new FileReader("C:\\Users\\Katiúscia Lima\\workspace\\Leio Sempre\\ArquivoLivros.txt");
+			arqLeitura = new FileReader("ArquivoLivros.txt");
 			lerArq = new BufferedReader(arqLeitura);
 			
 			String linha ;
@@ -61,7 +60,7 @@ public class Livros {
 	
 	public boolean procurarLivro(String titulo){
 		try {
-			arqLeitura = new FileReader("C:\\Users\\Katiúscia Lima\\workspace\\Leio Sempre\\ArquivoLivros.txt");
+			arqLeitura = new FileReader("ArquivoLivros.txt");
 			lerArq = new BufferedReader(arqLeitura);
 			
 			String linha ;
@@ -101,7 +100,7 @@ public class Livros {
 	
 	public void  salvarLivroNoArquivo(String titulo, String autor){
 		try {		
-			fileEscever = new FileOutputStream("C:\\Users\\Katiúscia Lima\\workspace\\Leio Sempre\\ArquivoLivros.txt", true);//parâmetro true escreve no arquivo sem substituir o que ja tem.
+			fileEscever = new FileOutputStream("ArquivoLivros.txt", true);//parâmetro true escreve no arquivo sem substituir o que ja tem.
 			escrever = new OutputStreamWriter(fileEscever);//Cria o objeto para escrever no arquivo
 			bufferedWriter = new BufferedWriter(escrever);
 			

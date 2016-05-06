@@ -1,21 +1,17 @@
 package com.br.view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JPasswordField;
 import javax.swing.border.EtchedBorder;
 
@@ -27,6 +23,10 @@ import java.awt.event.ActionEvent;
 
 public class TelaLogin extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField_login;
 	private JPasswordField passwordField;
@@ -66,6 +66,7 @@ public class TelaLogin extends JFrame {
 		btn_Entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String login = textField_login.getText();
+				@SuppressWarnings("deprecation")
 				String senha = passwordField.getText();
 				
 				Arquivo arq = new Arquivo();

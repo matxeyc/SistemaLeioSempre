@@ -1,6 +1,5 @@
 package com.br.view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,36 +7,25 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-import java.awt.Insets;
-import java.awt.Label;
-
-import javax.swing.JMenu;
-import javax.swing.JLabel;
-import java.awt.Font;
 import javax.swing.JTextField;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import javax.swing.border.EtchedBorder;
 
 import com.br.leioSempre.LerPDF;
 import com.br.leioSempre.Livros;
 
-import javax.swing.SwingConstants;
-import java.awt.Button;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class TelaLeioSempre extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField_ProcurarLivro;
 
@@ -120,7 +108,5 @@ public class TelaLeioSempre extends JFrame {
 		);
 		panel.setLayout(new GridLayout(3, 2));
 		contentPane.setLayout(gl_contentPane);
-	}
-	private static void addPopup(Component component, final JPopupMenu popup) {
 	}
 }

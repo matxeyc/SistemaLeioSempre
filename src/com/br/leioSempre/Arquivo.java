@@ -7,8 +7,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-import javax.swing.JOptionPane;
-
 public class Arquivo {
 	
 	
@@ -22,7 +20,7 @@ public class Arquivo {
 	
 	public boolean verificarLogin(String login, String senha){
 		try {
-			arqLeitura = new FileReader("C:\\Users\\Katiúscia Lima\\workspace\\Leio Sempre\\Arquivologin.txt");
+			arqLeitura = new FileReader("Arquivologin.txt");
 			lerArq = new BufferedReader(arqLeitura);
 			
 			String linha ;
@@ -57,7 +55,7 @@ public class Arquivo {
 	
 	public void lerArquivo(){
 		try {
-			arqLeitura = new FileReader("C:\\Users\\Katiúscia Lima\\workspace\\Leio Sempre\\Arquivologin.txt");
+			arqLeitura = new FileReader("Arquivologin.txt");
 			lerArq = new BufferedReader(arqLeitura);
 			
 			String linha ;
@@ -85,7 +83,7 @@ public class Arquivo {
 	
 	public void  escreverNoArquivo(String login, String senha/*, String tipoPacote*/){
 		try {		
-			fileEscever = new FileOutputStream("C:\\Users\\Katiúscia Lima\\workspace\\Leio Sempre\\Arquivologin.txt", true);//parâmetro true escreve no arquivo sem substituir o que ja tem.
+			fileEscever = new FileOutputStream("Arquivologin.txt", true);//parâmetro true escreve no arquivo sem substituir o que ja tem.
 			escrever = new OutputStreamWriter(fileEscever);//Cria o objeto para escrever no arquivo
 			bufferedWriter = new BufferedWriter(escrever);
 			
