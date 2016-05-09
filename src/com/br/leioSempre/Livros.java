@@ -104,9 +104,9 @@ public class Livros {
 			escrever = new OutputStreamWriter(fileEscever);//Cria o objeto para escrever no arquivo
 			bufferedWriter = new BufferedWriter(escrever);
 			
-			bufferedWriter.write(titulo+";");//seta o login no Arquivo
-			bufferedWriter.write(autor+";");//seta a senha no Arquivo
-			bufferedWriter.newLine();//Pula uma linha no arquivo pra quando for gravar o próximo contato, gravar na linha seguinte.
+			bufferedWriter.write(titulo+";");//seta o titulo no Arquivo
+			bufferedWriter.write(autor+";");//seta o autor no Arquivo
+			bufferedWriter.newLine();//Pula uma linha no arquivo pra quando for gravar o próximo livro, gravar na linha seguinte.
 			
 			
 			//O arquivo só é salvo quando as operações são fechadas.
