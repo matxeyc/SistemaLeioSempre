@@ -65,14 +65,22 @@ public class TelaLogin extends JFrame {
 		JButton btn_Entrar = new JButton("Entrar");
 		btn_Entrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				
 				String login = textField_login.getText();
 				@SuppressWarnings("deprecation")
 				String senha = passwordField.getText();
+
+				TelaLeioSempre.usuarioAtual= login;
 				
 				Arquivo arq = new Arquivo();
+				
 				if (arq.verificarLogin(login, senha)==true){
+					
 					TelaLeioSempre tls = new TelaLeioSempre();
+					
 					tls.setVisible(true);
+					
 					dispose();
 				}else{
 					JOptionPane.showMessageDialog(null, "usuário ou senha incorretos!");

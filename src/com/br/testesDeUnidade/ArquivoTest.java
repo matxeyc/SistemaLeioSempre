@@ -15,12 +15,11 @@ public class ArquivoTest {
 	public void setUp() throws Exception {
 		 arq= new Arquivo();
 	}
-
-	@SuppressWarnings({ "deprecation", "unused" })
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testVerificarLogin() {
-			assertEquals(true || false, arq.verificarLogin("Matheus", "123"));
+			assertEquals(true, arq.verificarLogin("Matheus", "123"));
 	}
 
 }

@@ -15,11 +15,12 @@ public class Livros {
 	static FileReader arqLeitura;
 	static BufferedReader lerArq;
 	static String [] palavras;
-	boolean flag= false;
-	
-	String caminho;
-	String Título;
-	String Autor;
+	static boolean flagPL= false;
+	String flagNomeAutor;
+	String flagDescricao;	
+	String flagCaminho;
+	//String Título;
+	//String Autor;
 	
 	
 	public String procurarCaminho(String titulo){
@@ -36,10 +37,10 @@ public class Livros {
 					
 					String [] palavras = linha.split(";");
 					
-					System.out.println("caminho:"+caminho);
-					System.out.println("1:"+palavras[1]);
+					//System.out.println("caminho:"+caminho);
+					//System.out.println("1:"+palavras[1]);
 					if(palavras[0].equalsIgnoreCase(titulo) ){
-						return palavras[2] ;
+						flagCaminho = palavras[2] ;
 						
 						
 					}
@@ -52,13 +53,89 @@ public class Livros {
 			
 			e.printStackTrace();
 		}
-		return null;
+		return flagCaminho;
+		
+	}
+	
+	public String procurarAutor(String titulo){
+		
+		
+		try {
+			arqLeitura = new FileReader("ArquivoLivros.txt");
+			lerArq = new BufferedReader(arqLeitura);
+			
+			String linha ;
+			
+			
+			do {
+				linha = lerArq.readLine();
+				if(linha != null){
+					
+					String [] palavras = linha.split(";");
+					
+					//System.out.println("caminho:"+caminho);
+					//System.out.println("1:"+palavras[1]);
+					if(palavras[0].equalsIgnoreCase(titulo) ){
+						flagNomeAutor = palavras[1] ;//posição 1  autor
+						
+						
+					}
+					
+				}
+			}while (linha != null); 
+			
+		        
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		return flagNomeAutor;
+		
+	}
+	
+	public String procurarDescricao(String titulo){
+		try {
+			arqLeitura = new FileReader("ArquivoLivros.txt");
+			lerArq = new BufferedReader(arqLeitura);
+			
+			String linha ;
+			
+			
+			do {
+				linha = lerArq.readLine();
+				if(linha != null){
+					
+					String [] palavras = linha.split(";");
+					
+					System.out.println("caminho:"+flagCaminho);
+					System.out.println("1:"+palavras[1]);
+					if(palavras[0].equalsIgnoreCase(titulo) ){
+						flagDescricao = palavras[3] ;
+						//posição 0  Título
+						//posição 1  autor
+						//posição 2  caminho
+						//posição 3  Descrição
+						
+						
+					}
+					
+				}
+			}while (linha != null); 
+			
+		        
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		return flagDescricao;
 		
 	}
 	
 	
 	
 	public boolean procurarLivro(String titulo){
+		
+		
 		try {
 			arqLeitura = new FileReader("ArquivoLivros.txt");
 			lerArq = new BufferedReader(arqLeitura);
@@ -75,9 +152,7 @@ public class Livros {
 					System.out.println("titulo:"+titulo);
 					System.out.println("1:"+palavras[1]);
 					if(palavras[0].equalsIgnoreCase(titulo) ){
-						return true;
-						
-						
+						flagPL = true;
 					}
 					
 				}
@@ -88,7 +163,7 @@ public class Livros {
 			
 			e.printStackTrace();
 		}
-		return false;
+		return flagPL;
 		
 	}
 	

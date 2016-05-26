@@ -1,3 +1,4 @@
-livro1;Matheus;livro1.pdf;
-livro2;Matheus;livro2.pdf;
-livro3;Matheus;livro3.pdf;
+livro1;Matheus;livro1.pdf;Jogo da Velha em java;
+livro2;Jazz;livro2.pdf;RMI em java;
+livro3;Magal;livro3.pdf;Teoria do Números ATAL;
+livro4;João Doido;livro4.pdf;Processos e Threads HPC;

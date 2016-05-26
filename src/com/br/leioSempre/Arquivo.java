@@ -16,32 +16,29 @@ public class Arquivo {
 	static FileReader arqLeitura;
 	static BufferedReader lerArq;
 	static String [] palavras;
-	boolean flag= false;
+	static boolean flagVL= false;
 	
 	public boolean verificarLogin(String login, String senha){
 		try {
 			arqLeitura = new FileReader("Arquivologin.txt");
 			lerArq = new BufferedReader(arqLeitura);
-			
 			String linha ;
-			
-			
 			do {
 				linha = lerArq.readLine();
 				if(linha != null){
 					
 					String [] palavras = linha.split(";");
 					
-					System.out.println("login:"+login);
-					System.out.println("1:"+palavras[1]);
-					System.out.println("senha:"+senha);
-					if(palavras[0].equalsIgnoreCase(login) && palavras[1].equalsIgnoreCase(senha) ){
-						return true;
-						
-						
-					}
+					//System.out.println("login:"+login);
+					//System.out.println("1:"+palavras[1]);
+					//System.out.println("senha:"+senha);
 					
-				}
+					if(palavras[0].equalsIgnoreCase(login) && palavras[1].equalsIgnoreCase(senha) ){
+						flagVL= true;//Se achou login e senha compatível flagVl true
+						
+					}//Fim teste if login e senha são iguais
+					
+				}//Fim teste if(linha!= null)
 			}while (linha != null); 
 			
 		        
@@ -49,9 +46,9 @@ public class Arquivo {
 			
 			e.printStackTrace();
 		}
-		return false;
+		return flagVL;//Senão 
 		
-	}
+	}//Fim método VerificarLogin
 	
 	public void lerArquivo(){
 		try {
@@ -81,7 +78,7 @@ public class Arquivo {
 	}
 	
 	
-	public void  escreverNoArquivo(String login, String senha/*, String tipoPacote*/){
+	public void  escreverNoArquivo(String login, String senha, String tipoPacote){
 		try {		
 			fileEscever = new FileOutputStream("Arquivologin.txt", true);//parâmetro true escreve no arquivo sem substituir o que ja tem.
 			escrever = new OutputStreamWriter(fileEscever);//Cria o objeto para escrever no arquivo
@@ -89,6 +86,7 @@ public class Arquivo {
 			
 			bufferedWriter.write(login+";");//seta o login no Arquivo
 			bufferedWriter.write(senha+";");//seta a senha no Arquivo
+			bufferedWriter.write(tipoPacote+";");
 			bufferedWriter.newLine();//Pula uma linha no arquivo pra quando for gravar o próximo contato, gravar na linha seguinte.
 			
 			

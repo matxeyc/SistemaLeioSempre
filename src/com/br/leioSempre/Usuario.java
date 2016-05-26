@@ -4,7 +4,7 @@ public class Usuario {
 
 	@SuppressWarnings("unused")
 	private String nome, email, senha;
-	//String tipoPacote;
+	String tipoPacote;
 
 	public Usuario() {
 
@@ -15,7 +15,7 @@ public class Usuario {
 		this.setNome(nome);
 		this.setEmail(email);
 		this.senha = senha;
-		//this.tipoPacote = tipoPacote;
+		this.tipoPacote = tipoPacote;
 
 	}
 

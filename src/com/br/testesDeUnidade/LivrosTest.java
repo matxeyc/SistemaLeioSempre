@@ -18,7 +18,23 @@ public class LivrosTest {
 
 	@Test
 	public void testProcurarLivro() {
-		assertEquals(true, lvr.procurarLivro("Matheus"));
+		assertEquals(true, lvr.procurarLivro("livro1"));
+	}
+	
+	@Test
+	public void testProcurarCaminho(){
+		assertEquals("livro1.pdf" ,lvr.procurarCaminho("livro1"));
+	}
+	
+	@Test
+	public void testProcurarAutor(){
+		assertEquals("Matheus",lvr.procurarAutor("livro1"));
+	}
+	
+	@Test
+	public void testeprocurarDescricao(){
+		
+		assertEquals("Jogo da Velha em java", lvr.procurarDescricao("livro1"));
 	}
 
 }
